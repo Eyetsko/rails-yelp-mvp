@@ -1,0 +1,15 @@
+<%= render "restaurant", restaurant: @restaurant %>
+<% @restaurant.reviews.each do |review| %>
+
+<div>
+<%= review.content %> - <%= review.rating %>
+</div>
+
+<% end %>
+<div>
+<%= link_to "add a review", new_restaurant_review_path(@restaurant) %>
+</div>
+
+<br>
+<%= link_to "Home",  restaurants_path(@restaurants)  %>
+<%= link_to "Delete this restaurant", @restaurant, method: :delete %>
